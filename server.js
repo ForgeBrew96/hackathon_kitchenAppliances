@@ -7,7 +7,6 @@ const { Category, Product } = require('./models')
 const categoryController = require('./controllers/categoryController');
 const productController = require('./controllers/productController');
 
-
 const PORT = process.env.PORT || 3001;
 
 const app = express();

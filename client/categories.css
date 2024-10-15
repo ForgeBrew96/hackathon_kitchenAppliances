@@ -1,0 +1,60 @@
+
+body {
+    font-family: Arial;
+    background-color: #f26666;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: Arial;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.5em;
+ 
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+input {
+    width: 200px;
+    padding: 15px;
+    font-family: Ariel;
+    font-size: 16px;
+    border-radius: 100%;
+    text-align: center;
+    margin-left: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: Ariel;
+    font-size: 16px;
+    margin-left:2px;
+}
+
+.categories {
+    margin-top: 30px;
+    background-color: rgb(213, 111, 111);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.menu {
+    display: flex; 
+    justify-content: space-around;
+    flex-direction: column; 
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 30px;
+    color: rgba(238, 114, 190, 0.7); 
+    -webkit-text-stroke: 1px rgb(244, 179, 15);
+}
+

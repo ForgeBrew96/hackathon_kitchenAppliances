@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('./db');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-
+const { Category, Product } = require('./models')
 
 // const categoryController = require('./controllers/categoryController');
 // const productController = require('./controllers/productController');
@@ -11,8 +11,24 @@ const logger = require('morgan');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
+app.use(cors())
+app.use(express.json())
+
+
 app.use(logger('dev'))
 app.use(bodyParser.json())
+
+async function main() {
+    try {
+        await db.connect(); // Ensure this is in place to connect to your DB
+        console.log('Database connected successfully');
+    } catch (error) {
+        console.error('Database connection error:', error);
+    }
+}
+
+main();
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 

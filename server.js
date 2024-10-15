@@ -8,6 +8,7 @@ const categoryController = require('./controllers/categoryController');
 const productController = require('./controllers/productController');
 
 
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -21,7 +22,7 @@ app.use(bodyParser.json())
 
 async function main() {
     try {
-        await db.connect();
+        await db.connect(); // Ensure this is in place to connect to your DB
         console.log('Database connected successfully');
     } catch (error) {
         console.error('Database connection error:', error);

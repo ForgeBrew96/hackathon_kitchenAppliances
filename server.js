@@ -15,10 +15,6 @@ app.use(cors());
 app.use(express.json());
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-    res.set('Cache-Control', 'no-store');
-    next();
-});
 
 (async () => {
     try {
@@ -35,15 +31,15 @@ app.get('/', (req, res) => res.send('This is our landing page!'))
 
 app.get('/categories', categoryController.getAllCategories)
 app.get('/categories/:id', categoryController.getCategoryById)
-// app.post('/categories', categoryController.createCategory)
-// app.put('/categories/:id', categoryController.updateCategory)
-// app.delete('/categories/:id', categoryController.deleteCategory)
+app.post('/categories', categoryController.createCategory)
+app.put('/categories/:id', categoryController.updateCategory)
+app.delete('/categories/:id', categoryController.deleteCategory)
 
 app.get('/products', productController.getAllProducts)
 app.get('/products/:id', productController.getProductById)
-// app.post('/products', productController.createProduct)
-// app.put('/products/:id', productController.updateProduct)
-// app.delete('/products/:id', productController.deleteProduct)
+app.post('/products', productController.createProduct)
+app.put('/products/:id', productController.updateProduct)
+app.delete('/products/:id', productController.deleteProduct)
 
 process.on('SIGINT', async () => {
     await mongoose.connection.close();

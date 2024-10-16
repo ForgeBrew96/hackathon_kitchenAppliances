@@ -33,13 +33,12 @@ const createCategory = async (req, res) => {
         return res.status(500).json({ error: error.message })
     }
 }
-
 const updateCategory = async (req, res) => {
     try {
         let { id } = req.params;
         let category = await Category.findByIdAndUpdate(id, req.body, { new: true })
         if (category) {
-            return res.status(200).json(type)
+            return res.status(200).json(category)
         }
         throw new Error("Category not found")
     } catch (error) {
@@ -47,7 +46,7 @@ const updateCategory = async (req, res) => {
     }
 }
 
-const deleteCatagory = async (req, res) => {
+const deleteCategory = async (req, res) => {
     try {
         const { id } = req.params;
         const deleted = await Category.findByIdAndDelete(id)
@@ -64,6 +63,6 @@ module.exports = {
     getAllCategories,
     getCategoryById,
     updateCategory,
-    deleteCatagory,
+    deleteCategory,
     createCategory
 }

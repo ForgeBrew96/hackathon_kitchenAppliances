@@ -3,7 +3,7 @@ const input = document.getElementById('input')
 const productName = document.getElementById('productName'); 
 const productImg = document.getElementById('productImg'); 
 const productPrice = document.getElementById('productPrice'); 
-
+const productInformation = document.getElementById('productInformation'); 
 const getKitchenProducts = async () => {
     try {
         const response = await fetch('http://localhost:3001/products');
@@ -27,6 +27,7 @@ search.addEventListener('click', async () => {
         productName.textContent = foundProduct.name;
         productImg.src = foundProduct.image
         productPrice.textContent = `$${foundProduct.priceUSD}`
+        productInformation.style.border = '2px solid #ccc';
     } else {
         productName.textContent = 'Product not found';
     }

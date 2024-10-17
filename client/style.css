@@ -58,3 +58,22 @@ button {
     -webkit-text-stroke: 1px rgb(244, 179, 15);
 }
 
+#productInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto; 
+    padding: 40px;
+    width: 200px;
+}
+
+#productInformation img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#productName, #productPrice {
+    margin: -10px 0;
+    text-align: center;
+}
